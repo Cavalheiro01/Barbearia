@@ -37,7 +37,7 @@ if (formCadastro) {
         }
 
         try {
-            const resposta = await fetch("http://localhost:3000/clientes", {
+            const resposta = await fetch("/clientes", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
