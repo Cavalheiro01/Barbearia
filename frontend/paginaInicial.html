@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Prime</title>
+    <link rel="stylesheet" href="/frontend/css/cssBase.css">
+    <link rel="stylesheet" href="/frontend/css/mobile.css">
+    <link rel="stylesheet" href="/frontend/css/admin.css">
+    <link rel="icon" type="image/png" href="/frontend/img/barbearia 1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo">
+            <img src="/frontend/img/barbearia 1.png" alt="Logo da Barbearia">
+
+        </div>
+
+        <div class="menu-icon" id="btn-menu">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
+        </div>
+
+
+        <nav class="menu" id="menu">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#precos">Preços</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+
+            <div class="linha-menu"></div>
+
+            <div class="area-login">
+
+                <span id="usuarioLogado"></span>
+                <button  class="botaoSair" id="btnSair" style="display: none;">
+                    Sair
+                </button>
+
+
+                <a href="#" id="btnEntrar">
+                    Faça seu Login
+                </a>
+
+                <div class="popup-login" id="popupLogin">
+
+                    <label>E-mail</label>
+                    <input type="email" id="loginEmail">
+
+                    <label>Senha</label>
+                    <input type="password" id="loginSenha">
+
+                    <button id="btnLogin">Entrar</button>
+                    <button id="btnIrCadastro">Cadastrar</button>
+
+                </div>
+
+            </div>
+
+
+        </nav>
+
+
+    </header>
+
+    <section class="banner" id="inicio">
+
+        <div class="banner-texto">
+
+            <h1>Estilo, tradição e presença</h1>
+            <p>Uma experiência premium em cortes masculinos, barba, acabamento e cuidado completo para o seu visual.
+            </p>
+
+            <div class="botoes-banner">
+                <a href="#contato" class="btn-azul">Agendar Horário</a>
+                <a href="#precos" class="btn-outline">Ver Preços</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="conteudo-servicos">
+
+        <section class="sobre" id="sobre">
+            <div class="sobre-texto">
+                <h2>Sobre a Prime</h2>
+                <p>Na Barbearia Prime, tradição e modernidade andam juntas. Nosso espaço foi criado para oferecer muito
+                    mais que um corte: aqui você vive uma experiência.</p>
+                <p>Com profissionais qualificados, ambiente elegante e atendimento de alto nível, cada detalhe é pensado
+                    para valorizar o seu estilo.</p>
+                <p>Seja para um visual clássico ou moderno, a nossa missão é deixar você no seu melhor.</p>
+            </div>
+
+        </section>
+
+        <section id="servicos">
+
+            <div class="titulo-secao">
+                <h2>Nossos Serviços</h2>
+                <p>Cuidado profissional para destacar o seu estilo.</p>
+            </div>
+
+
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/frontend/img/cortes-estilos.png" class="d-block w-100" alt="imagem de cortes de cabelo">
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <p>Oferecemos cortes modernos e clássicos executados com técnica, precisão e estilo.
+                                Do degradê ao social tradicional, cada detalhe é pensado para valorizar sua aparência e
+                                garantir um resultado impecável.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/frontend/img/barba-estilo.png" class="d-block w-100" alt="Imagem de estilos de barba">
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <p>Modelagem de barba com acabamento preciso e técnicas modernas para valorizar seu estilo.
+                                Trabalhamos desde ajustes discretos até desenhos personalizados,
+                                sempre respeitando o formato do rosto e o perfil de cada cliente.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/frontend/img/produtos.png" class="d-block w-100" alt="Imagem de produtos">
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <p>Utilizamos produtos profissionais de alta qualidade para garantir acabamento impecável e
+                                cuidado completo com cabelo e barba.
+                                Trabalhamos com pomadas modeladoras, óleos hidratantes, perfumes e outros itens
+                                selecionados para proporcionar estilo,
+                                conforto e uma experiência diferenciada em cada atendimento.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/frontend/img/premium.png" class="d-block w-100" alt="Imagem pacote premium">
+                        <div class="carousel-caption d-none d-md-block">
+
+                            <p>O Combo Premium oferece uma experiência completa de cuidado e estilo.
+                                Inclui corte personalizado, modelagem de barba com acabamento preciso e
+                                finalização com produtos profissionais selecionados para garantir um visual impecável e
+                                sofisticado.</p>
+
+                        </div>
+                    </div>
+
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                    crossorigin="anonymous"></script>
+
+        </section>
+
+        <section class="secao-precos" id="precos">
+
+            <div class="titulo-secao">
+
+                <h2>Estilos e Preços</h2>
+                <p>Confira nossos cortes, estilos de barba e valores.</p>
+            </div>
+
+
+            <div class="grid-precos">
+                <div class="card-preco">
+                    <h3>Cortes</h3>
+
+                    <div class="item-preco">
+                        <span>Corte Social</span>
+                        <span class="valor">R$ 30,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Degradê / Fade</span>
+                        <span class="valor">R$ 35,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Corte Navalhado</span>
+                        <span class="valor">R$ 40,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Corte Infantil</span>
+                        <span class="valor">R$ 25,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Disfarçado na Máquina</span>
+                        <span class="valor">R$ 28,00</span>
+                    </div>
+                </div>
+
+
+                <div class="card-preco">
+                    <h3>Barba</h3>
+
+                    <div class="item-preco">
+                        <span>Barba Simples</span>
+                        <span class="valor">R$ 20,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Barba Desenhada</span>
+                        <span class="valor">R$ 25,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Barba com Toalha Quente</span>
+                        <span class="valor">R$ 30,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Hidratação da Barba</span>
+                        <span class="valor">R$ 18,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Acabamento de Bigode</span>
+                        <span class="valor">R$ 12,00</span>
+                    </div>
+                </div>
+
+
+                <div class="card-preco">
+                    <h3>Combos</h3>
+
+                    <div class="item-preco">
+                        <span>Corte + Barba</span>
+                        <span class="valor">R$ 50,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Corte + Sobrancelha</span>
+                        <span class="valor">R$ 40,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Barba + Toalha Quente</span>
+                        <span class="valor">R$ 32,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Combo Premium</span>
+                        <span class="valor">R$ 60,00</span>
+                    </div>
+
+                    <div class="item-preco">
+                        <span>Pacote Mensal</span>
+                        <span class="valor">R$ 180,00</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="galeria">
+            <div class="titulo-secao">
+                <h2>Nossa Barbearia</h2>
+                <p>Ambiente sofisticado, moderno e pensado para o seu conforto.</p>
+            </div>
+
+            <div class="flex-galeria">
+                <div class="foto">
+                    <img src="/frontend/img/foto1 1.png" alt="Barbearia prime ">
+                </div>
+
+                <div class="foto">
+                    <img src="/frontend/img/foto2 1.jpg" alt="Barbearia prime acessorios">
+                </div>
+
+                <div class="foto">
+                    <img src="/frontend/img/foto3 1.png" alt="Rapaz fazendo a barba">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contato">
+            <div class="titulo-secao">
+                <h2>Contato</h2>
+                <p>Agende seu horário e venha elevar o seu visual.</p>
+            </div>
+
+            <div class="container-contato-horizontal">
+                <div class="card-fale-conosco">
+                    <h3>Fale Conosco</h3>
+                    <form id="contact-form">
+                        <div class="campo-contato">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="campo-contato">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="campo-contato">
+                            <label for="tema">Tema:</label>
+                            <select id="tema" name="tema" required>
+                                <option value="" disabled selected>Selecione um tema</option>
+                                <option value="Dúvida">Dúvida</option>
+                                <option value="Agendamento">Agendamento</option>
+                                <option value="Reclamação">Reclamação</option>
+                            </select>
+                        </div>
+                        <div class="campo-contato">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sua mensagem aqui..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-enviar-contato">Enviar Mensagem</button>
+
+                        <div id="feedback"
+                            style="display: none; margin-top: 20px; padding: 12px; border-radius: 5px; font-weight: bold;">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="info-contato-lateral">
+                    <div class="caixa">
+                        <h3>Horário</h3>
+                        <p>Segunda a Sábado</p>
+                        <p>09:00 às 20:00</p>
+                    </div>
+                    <div class="caixa">
+                        <h3>Endereço</h3>
+                        <p>Rua Salvador Branco de Andrade, 182</p>
+                        <p>Jardim São Miguel, Taboão da Serra - SP</p>
+                    </div>
+                    <div class="caixa">
+                        <h3>WhatsApp</h3>
+                        <p>(11) 95728-7608</p>
+                        <p>Atendimento rápido e fácil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="/frontend/script/main.js"></script>
+</body>
+
+</html>
+

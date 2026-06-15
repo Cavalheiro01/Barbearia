@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/frontend/img/barbearia 1.png 1.png">
+    <title>Painel Administrativo - Barbearia Prime</title>
+    <link rel="stylesheet" href="/frontend/css/admin.css">
+   
+</head>
+<body>
+<div class="container">
+    <div class="topo-admin">
+        <button class="voltar" onclick="window.location.href='paginaInicial.html'">← Voltar ao Site</button>
+        
+    </div>
+
+    <h1>Gerenciamento de Usuários</h1>
+    
+    <div class="barra-busca">
+        <input type="text" id="campoBusca" placeholder="🔍 Buscar por nome, e-mail ou CPF...">
+        <button id="btnLimparBusca">Limpar</button>
+    </div>
+    <div id="contador" class="contador"></div>
+
+    <div id="loading">Carregando usuários...</div>
+    <table id="tabelaUsuarios" style="display: none;">
+        <thead>
+            <tr><th>ID</th><th>Nome</th><th>CPF</th><th>E-mail</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="corpoTabela"></tbody>
+    </table>
+</div>
+
+<!-- Modal de Edição (SEM CAMPO DE SENHA) -->
+<div id="modalEditar" class="modal">
+    <div class="modal-conteudo">
+        <h3>Editar Usuário</h3>
+        <input type="hidden" id="editId">
+        <label>Nome:</label><input type="text" id="editNome">
+        <label>CPF:</label><input type="text" id="editCpf">
+        <label>E-mail:</label><input type="email" id="editEmail">
+        <label>Administrador:</label>
+        <select id="editAdmin">
+            <option value="0">Não</option>
+            <option value="1">Sim</option>
+        </select>
+        <div>
+            <button id="btnSalvarEdicao">Salvar</button>
+            <button id="btnCancelarEdicao" onclick="fecharModal()">Cancelar</button>
+        </div>
+        <div id="modalFeedback" class="feedback"></div>
+    </div>
+</div>
+
+<script src="/backend/controller/adminController.js"></script>
+</body>
+</html>

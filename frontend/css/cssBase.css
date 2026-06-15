@@ -1,0 +1,435 @@
+/* -------RESET--------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.conteudo-servicos {
+    width: 100%;
+    margin: 0;
+    padding: 40px 5%;
+    background-color: #000;
+}
+
+/*---------GERAL-----------*/
+
+section {
+    scroll-margin-top: 100px;
+    padding: 60px 5%;
+}
+
+/* -----------HEADER----------- */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #000;
+    border-bottom: 2px solid #00a1f8;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* --------MENU------- */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.menu a:hover {
+    background: linear-gradient(to right, #151515, #ecba05);
+}
+
+.area-login {
+    position: relative;
+    margin-left: auto;
+}
+
+#btnEntrar {
+    margin-left: 0;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.barra {
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.linha-menu {
+    display: none;
+}
+
+/* -----------BANNER------------*/
+
+.banner {
+    position: relative;
+    min-height: 550px;
+    background-image: url(/frontend/img/banner-image\ 1.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.banner-texto {
+    max-width: 750px;
+}
+
+.banner-texto h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.banner-texto p {
+    font-size: 20px;
+    color: #e6e6e6;
+    margin-bottom: 25px;
+}
+
+/* ---------BOTÕES---------- */
+
+.botoes-banner {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-azul,
+.btn-outline {
+    padding: 14px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-azul {
+    background-color: #00a1f82f;
+    color: #fff;
+    font-weight: normal;
+}
+
+.btn-azul:hover {
+
+    background: linear-gradient(to right, #151515, #0b5cb3);
+    color: #fff;
+}
+
+.btn-outline {
+    background-color: #00a1f82f;
+    color: #fff;
+    font-weight: normal;
+}
+
+.btn-outline:hover {
+
+    background: linear-gradient(to right, #151515, #0b5cb3);
+    color: #fff;
+}
+
+/* ------------SOBRE------------ */
+
+.sobre-texto {
+    background: #101c31;
+    padding: 30px;
+    border-radius: 14px;
+}
+
+.sobre-texto h2 {
+    color: #ffbb00;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.sobre-texto p {
+    color: #ddd;
+    margin-bottom: 12px;
+}
+
+/* -------------TITULOS------------- */
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-secao h2 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.titulo-secao p {
+    color: #cfcfcf;
+}
+
+/* --------------PREÇOS---------------*/
+
+.grid-precos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-preco {
+    background: #091426;
+    border-radius: 14px;
+    padding: 25px;
+    border: 1px solid rgba(212, 175, 55, .25);
+}
+
+.card-preco h3 {
+    color: #ecba05;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.item-preco {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    color: #fff;
+}
+
+.valor {
+    color: #ffd000;
+    font-weight: bold;
+}
+
+/* ------------GALERIA------------ */
+
+.flex-galeria {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.foto {
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --------------CONTATO------------- */
+
+.container-contato-horizontal {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-fale-conosco {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+    background: #d6d6d6;
+    color: #333;
+    padding: 30px;
+    border-radius: 14px;
+}
+
+.card-fale-conosco form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-fale-conosco label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-fale-conosco input,
+.card-fale-conosco select,
+.card-fale-conosco textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.card-fale-conosco textarea {
+    min-height: 120px;
+}
+
+.info-contato-lateral {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.caixa {
+    background: #022130;
+    padding: 25px;
+    border-radius: 14px;
+}
+
+.caixa h3 {
+    color: #ecba05;
+}
+
+.caixa p {
+    color: #fff;
+}
+
+.btn-enviar-contato {
+    width: 100%;
+    padding: 12px;
+    background: #004a8d;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* -----------CAROUSEL------------- */
+
+.carousel-item img {
+    height: 560px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, .7);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.titulo-secao h2 {
+    color: #fff;
+}
+
+/*------Login--------*/
+
+.area-login {
+    position: relative;
+}
+
+.popup-login {
+    display: none;
+
+    position: absolute;
+    top: 40px;
+    right: 0;
+
+    width: 250px;
+
+    background: #091426;
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.popup-login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.popup-login button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.popup-login button:hover {
+
+    background: #004af8;
+    color: #fff;
+}
+
+.popup-login label {
+    color: #fff;
+}
+
+.popup-login.ativo {
+    display: block;
+}
+
+
+#btnSair {
+
+    width: 19%;
+    height: auto;
+    border-radius: 5px;
+    background-color: #bd0009;
+    border: none;
+    font-weight: normal;
+    margin: 20px;
+
+}
+
+#btnSair:hover {
+
+    background-color: #4b0303;
+}

@@ -1,0 +1,63 @@
+body {
+    background-image: url(/frontend/img/banner-image\ 1.png);
+    color: #fff;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.container-cadastro {
+    width: 100%;
+    max-width: 500px;
+
+    background: #091426;
+
+    padding: 30px;
+
+    border-radius: 12px;
+}
+
+.container-cadastro h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-cadastro form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-cadastro input {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+}
+
+.container-cadastro button {
+    margin-top: 15px;
+    padding: 12px;
+
+    border: none;
+
+    background: #004a8d;
+    color: #fff;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+#btnCadastrar:hover,
+#btnVoltar:hover{
+
+    background-color: #0a1c38;
+}
+
+
+
+
