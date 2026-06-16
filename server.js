@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 const clientesRoutes = require("./backend/routes/cliente");
 const adminRoutes = require("./backend/routes/admin");
  
-app.use("/clientes", clienteRoutes);
+app.use("/cliente", clientesRoutes);
 app.use("/admin", adminRoutes);
  
 const PORT = process.env.PORT || 3000;
