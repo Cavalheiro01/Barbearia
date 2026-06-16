@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const clienteController = require("../controller/clienteController");
+const clienteController = require("../controller/clientesController");
 
 router.post("/", clienteController.cadastrar);
 

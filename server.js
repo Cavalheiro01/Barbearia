@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "paginaInicial.html"));
 });
  
-const clientesRoutes = require("./backend/controller/clientesController");
+const clientesRoutes = require("./backend/routes/clientes");
 const adminRoutes = require("./backend/routes/admin");
  
 app.use("/clientes", clientesRoutes);
