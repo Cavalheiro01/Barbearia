@@ -1,4 +1,4 @@
-const db = require("../database/conexão");
+const db = require("../database/conexao");
 
 function listarUsuarios(callback) {
     db.query(
