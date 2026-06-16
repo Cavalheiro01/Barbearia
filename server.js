@@ -13,10 +13,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend", "paginaInicial.html"));
 });
  
-const clientesRoutes = require("./backend/routes/clientes");
+const clientesRoutes = require("./backend/routes/cliente");
 const adminRoutes = require("./backend/routes/admin");
  
-app.use("/clientes", clientesRoutes);
+app.use("/clientes", clienteRoutes);
 app.use("/admin", adminRoutes);
  
 const PORT = process.env.PORT || 3000;
