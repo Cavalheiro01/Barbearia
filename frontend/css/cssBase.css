@@ -433,3 +433,30 @@ section {
 
     background-color: #4b0303;
 }
+
+#loginMobile {
+    display: block;
+
+    position: absolute;
+    top: 200px;
+    right: 0;
+    margin: 65px;
+
+    width: 280px;
+    height: auto;
+
+    background: #091426;
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+
+#bodyLogin {
+
+    display: flex;
+    background-image: url(/frontend/img/banner-image.png);
+
+}

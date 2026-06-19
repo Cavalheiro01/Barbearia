@@ -2,17 +2,32 @@
 const btnEntrar = document.getElementById("btnEntrar");
 const popupLogin = document.getElementById("popupLogin");
 
+
 if (btnEntrar && popupLogin) {
     btnEntrar.addEventListener("click", function (e) {
         e.preventDefault();
-        popupLogin.classList.toggle("ativo");
+
+        if (window.innerWidth <= 768) {
+            window.location.href = "loginMobile.html";
+        } else {
+            popupLogin.classList.toggle("ativo");
+
+        }
     });
 }
 
+/*----------LOGIN-MOBILE--------*/
+const btnVoltar = document.getElementById("btnVoltarMobile");
 
+if (btnVoltar) {
+    btnVoltar.addEventListener("click", function () {
+        window.location.href = "paginaInicial.html";
+    });
+}
 
 /*-------- LOGIN --------*/
 const btnLogin = document.getElementById("btnLogin");
+const baseUrl = "https://barbearia-l5v8.onrender.com/"
 
 if (btnLogin) {
     btnLogin.addEventListener("click", async () => {
@@ -20,14 +35,13 @@ if (btnLogin) {
         const senha = document.getElementById("loginSenha").value;
 
         try {
-            const resposta = await fetch("/clientes/login", {
+            const resposta = await fetch(`${baseUrl}cliente/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({ email, senha })
             });
-
             if (!resposta.ok) {
                 alert("Email ou senha inválidos");
                 return;
@@ -38,8 +52,13 @@ if (btnLogin) {
             // salva usuário no navegador
             localStorage.setItem("usuario", JSON.stringify(dados.usuario));
 
-            // recarrega a página
-            location.reload();
+            // Mobile → volta para a página inicial
+            if (window.innerWidth <= 768) {
+                window.location.href = "paginaInicial.html";
+            } else {
+                // Desktop → apenas recarrega a página
+                location.reload();
+            }
 
         } catch (erro) {
             console.error(erro);

@@ -1,5 +1,7 @@
 
     const USUARIO_LOGADO = JSON.parse(localStorage.getItem("usuario"));
+    const baseUrl = "https://barbearia-l5v8.onrender.com/"
+    
     if (!USUARIO_LOGADO || USUARIO_LOGADO.is_admin !== 1) {
         alert("Acesso negado! Você não é administrador.");
         window.location.href = "paginaInicial.html";
@@ -10,7 +12,7 @@
 
     async function carregarUsuarios() {
         try {
-            const response = await fetch("/admin/users", {
+            const response = await fetch(`${baseUrl}cliente`, {
                 headers: { "X-User-Id": USUARIO_LOGADO.id }
             });
             if (!response.ok) {
@@ -103,7 +105,7 @@
         const payload = { nome, cpf, email, is_admin };
 
         try {
-            const response = await fetch(`/admin/users/${id}`, {
+            const response = await fetch(`${baseUrl}admin/users/${id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -135,7 +137,7 @@
     async function confirmarExclusao(id, nome) {
         if (confirm(`Tem certeza que deseja excluir "${nome}"?`)) {
             try {
-                const response = await fetch(`/admin/users/${id}`, {
+                const response = await fetch(`${baseUrl}admin/users/${id}`, {
                     method: "DELETE",
                     headers: { "X-User-Id": USUARIO_LOGADO.id }
                 });

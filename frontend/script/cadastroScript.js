@@ -1,6 +1,6 @@
 /*----------- REDIRECIONAR PARA CADASTRO -----------*/
 const btnIrCadastro = document.getElementById("btnIrCadastro");
-
+const baseUrl = "https://barbearia-l5v8.onrender.com/"
 if (btnIrCadastro) {
     btnIrCadastro.addEventListener("click", function () {
         window.location.href = "paginaCadastro.html";
@@ -11,10 +11,15 @@ const btnVoltar = document.getElementById("btnVoltar");
 
 if (btnVoltar) {
     btnVoltar.addEventListener("click", function () {
-        window.location.href = "paginaInicial.html";
+
+        if (window.innerWidth <= 768) {
+            window.location.href = "loginMobile.html";
+        } else {
+            window.location.href = "paginaInicial.html";
+        }
+
     });
 }
-
 
 
 // -------- CADASTRO DE USUÁRIO --------
@@ -37,7 +42,7 @@ if (formCadastro) {
         }
 
         try {
-            const resposta = await fetch("/clientes", {
+            const resposta = await fetch(`${baseUrl}cliente`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

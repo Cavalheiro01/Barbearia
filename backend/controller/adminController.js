@@ -1,5 +1,5 @@
 const Usuario = require("../models/usuario");
-const db = require("../database/conexao");
+const db = require("../database/conexão");
 
 // Middleware para verificar se o usuário é administrador
 exports.verificarAdmin = (req, res, next) => {
