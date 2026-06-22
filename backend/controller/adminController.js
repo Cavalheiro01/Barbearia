@@ -1,5 +1,5 @@
 const Usuario = require("../models/usuario");
-const db = require("../database/conexão");
+const db = require("../database/conexao");
 const jwt = require("jsonwebtoken");
 const SECRET = "segredo-super-seguro";
 
