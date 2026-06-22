@@ -13,7 +13,7 @@
     async function carregarUsuarios() {
         try {
             const response = await fetch(`${baseUrl}cliente`, {
-                headers: { "X-User-Id": USUARIO_LOGADO.id }
+                headers: { "Authorization": "Bearer " + localStorage.getItem("token") }
             });
             if (!response.ok) {
                 const erro = await response.json();

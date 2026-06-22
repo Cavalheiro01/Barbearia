@@ -29,6 +29,7 @@ if (btnVoltar) {
 const btnLogin = document.getElementById("btnLogin");
 const baseUrl = "https://barbearia-l5v8.onrender.com/"
 
+
 if (btnLogin) {
     btnLogin.addEventListener("click", async () => {
         const email = document.getElementById("loginEmail").value;
@@ -50,7 +51,7 @@ if (btnLogin) {
             const dados = await resposta.json();
 
             // salva usuário no navegador
-            localStorage.setItem("usuario", JSON.stringify(dados.usuario));
+            localStorage.setItem("token", dados.token);
 
             // Mobile → volta para a página inicial
             if (window.innerWidth <= 768) {
@@ -71,14 +72,23 @@ if (btnLogin) {
 const usuarioLogadoSpan = document.getElementById("usuarioLogado");
 const btnSair = document.getElementById("btnSair");
 
-const usuario = JSON.parse(localStorage.getItem("usuario"));
+const token = localStorage.getItem("token");
+
+let usuario = null;
+
+if (token) {
+    const payload = JSON.parse(atob(token.split(".")[1]));
+    usuario = payload;
+}
 
 if (usuario) {
     let nomeExibicao = usuario.nome;
 
     // se for admin
     if (usuario.is_admin === 1) {
+        
         nomeExibicao += " (Administrador)";
+        
     }
 
     if (usuarioLogadoSpan) {
@@ -119,7 +129,7 @@ if (usuario) {
 // -------- LOGOUT --------
 if (btnSair) {
     btnSair.addEventListener("click", () => {
-        localStorage.removeItem("usuario");
+        localStorage.removeItem("token");
         location.reload();
     });
 }

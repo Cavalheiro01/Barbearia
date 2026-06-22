@@ -1,34 +1,38 @@
 const Usuario = require("../models/usuario");
 const db = require("../database/conexão");
+const jwt = require("jsonwebtoken");
+const SECRET = "segredo-super-seguro";
+
 
 // Middleware para verificar se o usuário é administrador
+
 exports.verificarAdmin = (req, res, next) => {
 
-    const userId = req.headers["x-user-id"];
+    const authHeader = req.headers["authorization"];
 
-    if (!userId) {
-        return res.status(401).json({
-            erro: "Usuário não autenticado"
-        });
+    if (!authHeader) {
+        return res.status(401).json({ erro: "Token não fornecido" });
     }
 
-    Usuario.verificarAdminPorId(userId, (err, results) => {
+    const token = authHeader.split(" ")[1];
 
-        if (err || results.length === 0) {
-            return res.status(403).json({
-                erro: "Acesso negado"
-            });
-        }
+    try {
+        const decoded = jwt.verify(token, SECRET);
 
-        if (results[0].is_admin !== 1) {
+        if (decoded.is_admin !== 1) {
             return res.status(403).json({
                 erro: "Permissão de administrador necessária"
             });
         }
 
+        req.user = decoded;
         next();
-    });
+
+    } catch (err) {
+        return res.status(401).json({ erro: "Token inválido" });
+    }
 };
+
 
 // Listar usuários
 exports.listarUsuarios = (req, res) => {

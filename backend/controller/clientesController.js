@@ -1,5 +1,7 @@
 const Usuario = require("../models/usuario");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const SECRET = "segredo-super-seguro";
 
 // CADASTRAR
 exports.cadastrar = async (req, res) => {
@@ -65,11 +67,11 @@ exports.excluir = (req, res) => {
 };
 
 // LOGIN
-exports.login = (req, res) => {
 
+exports.login = (req, res) => {
     const { email, senha } = req.body;
 
-    Usuario.login(email, (err, result) => {
+    Usuario.login(email, async (err, result) => {
 
         if (err) {
             return res.status(500).send(err.message);
@@ -79,11 +81,31 @@ exports.login = (req, res) => {
             return res.status(401).send("Email ou senha inválidos");
         }
 
+        const usuario = result[0];
+
+        // comparar senha
+        const senhaValida = await require("bcryptjs").compare(senha, usuario.senha);
+
+        if (!senhaValida) {
+            return res.status(401).send("Senha inválida");
+        }
+
+        // gerar token
+        const token = jwt.sign(
+            {
+                id: usuario.id,
+                nome: usuario.nome,
+                email: usuario.email,
+                is_admin: usuario.is_admin
+            },
+            SECRET,
+            { expiresIn: "1h" }
+        );
+
         res.json({
             mensagem: "Login realizado com sucesso",
-            usuario: result[0]
+            token
         });
 
     });
-
 };
